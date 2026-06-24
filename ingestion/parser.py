@@ -1,9 +1,21 @@
 import pymupdf
 
-doc = pymupdf.open("a.pdf") # open a document
-out = open("output.txt", "wb") # create a text output
-for page in doc: # iterate the document pages
-    text = page.get_text().encode("utf8") # get plain text (is in UTF-8)
-    out.write(text) # write text of page
-    out.write(bytes((12,))) # write page delimiter (form feed 0x0C)
-out.close()
+def parse_pdf(filepath):
+    doc = pymupdf.open(filepath)
+    chunks = []
+    for page_num, page in enumerate(doc):
+        text = page.get_text()
+        paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+        for i, para in enumerate(paragraphs):
+            chunks.append({
+                "source": filepath,
+                "page": page_num,
+                "chunk_index": i,
+                "text": para
+            })
+    return chunks
+
+if __name__ == "__main__":
+    chunks = parse_pdf("a.pdf")
+    for c in chunks:
+        print(c)
