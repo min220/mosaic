@@ -1,12 +1,10 @@
-# mosaic
-# a document privacy auditing pipeline.
-#mosaic
+mosaic
 
-#An agentic document privacy auditing pipeline that detects sensitive information leakage, #including cross-document inference risks that no single document reveals alone.
+An agentic document privacy auditing pipeline that detects sensitive information leakage, including cross-document inference risks that no single document reveals alone.
 
-#what it does
+what it does
 
-#Most privacy tools scan documents one at a time. Mosaic goes further: it reasons across a set of documents to detect what can be inferred by combining them, even when each document looks clean individually. This is the mosaic effect: the phenomenon where individually innocuous pieces of information, aggregated, disclose something sensitive that none of them would alone.
+Most privacy tools scan documents one at a time. Mosaic goes further: it reasons across a set of documents to detect what can be inferred by combining them, even when each document looks clean individually. This is the mosaic effect: the phenomenon where individually innocuous pieces of information, aggregated, disclose something sensitive that none of them would alone.
 
 A document with a full name is low risk. A document with a college affiliation is low risk. A document with a graduation year is low risk. Together, they create a precise, actionable profile of a private individual, enough to locate them, contact them, or target them. Mosaic catches that.
 
