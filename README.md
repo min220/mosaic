@@ -1,4 +1,4 @@
-mosaic
+# mosaic
 
 An agentic document privacy auditing pipeline that detects sensitive information leakage, including cross-document inference risks that no single document reveals alone.
 
