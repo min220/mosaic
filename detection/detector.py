@@ -34,7 +34,14 @@ Respond with JSON only. No preamble, no markdown."""
         messages=[{"role": "user", "content": prompt}]
     )
 
-    result = json.loads(message.content[0].text)
+    raw = message.content[0].text.strip()
+    if not raw:
+        return {"findings": [], "overall_risk": "LOW", "summary": "No response from model.", "chunk_index": chunk["chunk_index"], "page": chunk["page"], "source": chunk["source"]}
+    if raw.startswith("```"):
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    result = json.loads(raw.strip())
     result["chunk_index"] = chunk["chunk_index"]
     result["page"] = chunk["page"]
     result["source"] = chunk["source"]
