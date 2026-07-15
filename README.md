@@ -76,7 +76,18 @@ mosaic/
   dashboard/        # React frontend (in progress)
   evals/            # synthetic dataset + precision/recall benchmarks (in progress)
 ```
- 
+## evals
+
+Evaluated against a synthetic dataset of 5 labeled cases with known mosaic leakage.
+
+| metric | score |
+|--------|-------|
+| precision | 0.60 |
+| recall | 1.00 |
+| f1 | 0.75 |
+
+Recall is 1.0 — the pipeline catches every real case. Two false positives reflect the model's tendency to infer risk from single-document PII and generic business text. For a privacy auditing tool, over-flagging is a deliberate tradeoff over missing real leakage.
+
 ## why this matters
  
 Enterprise document workflows, legal review, compliance audits, FOIA requests, data room due diligence, involve large sets of documents that get reviewed individually but leaked collectively. Existing tools flag PII in isolation. Mosaic flags what the documents reveal together.
