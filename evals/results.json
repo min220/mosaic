@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "precision": 0.6,
+    "recall": 1.0,
+    "f1": 0.7499999999999999,
+    "tp": 3,
+    "fp": 2,
+    "tn": 0,
+    "fn": 0
+  },
+  "cases": [
+    {
+      "id": "case_001",
+      "outcome": "TP",
+      "expected_mosaic": true,
+      "predicted_mosaic": true,
+      "expected_severity": "HIGH",
+      "predicted_severity": "HIGH",
+      "inferences_found": 4
+    },
+    {
+      "id": "case_002",
+      "outcome": "TP",
+      "expected_mosaic": true,
+      "predicted_mosaic": true,
+      "expected_severity": "HIGH",
+      "predicted_severity": "HIGH",
+      "inferences_found": 5
+    },
+    {
+      "id": "case_003",
+      "outcome": "FP",
+      "expected_mosaic": false,
+      "predicted_mosaic": true,
+      "expected_severity": "LOW",
+      "predicted_severity": "MEDIUM",
+      "inferences_found": 1
+    },
+    {
+      "id": "case_004",
+      "outcome": "TP",
+      "expected_mosaic": true,
+      "predicted_mosaic": true,
+      "expected_severity": "HIGH",
+      "predicted_severity": "HIGH",
+      "inferences_found": 4
+    },
+    {
+      "id": "case_005",
+      "outcome": "FP",
+      "expected_mosaic": false,
+      "predicted_mosaic": true,
+      "expected_severity": "LOW",
+      "predicted_severity": "MEDIUM",
+      "inferences_found": 1
+    }
+  ]
+}
